@@ -11,12 +11,12 @@
 ### Импорт библиотек и константы:
 
     import tkinter as tk
-from tkinter import ttk, messagebox
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import numpy as np
+    from tkinter import ttk, messagebox
+    import matplotlib.pyplot as plt
+    from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+    import numpy as np
 
-G = 9.81
+    G = 9.81
 
 ### Вычисление ускорения
 <img width="766" height="446" alt="image" src="https://github.com/user-attachments/assets/ab666527-22b4-4ecd-87e3-02b615f4b29b" />
@@ -25,7 +25,7 @@ G = 9.81
 <img width="823" height="441" alt="image" src="https://github.com/user-attachments/assets/a2cd31eb-0717-4b90-bfdb-f8db659e57fa" />
 
 ### Математика
-    def solve_rk4(self, h, v0, angle, m, S, C, rho):
+        def solve_rk4(self, h, v0, angle, m, S, C, rho):
         """Решение системы методом Рунге-Кутты 4-го порядка"""
         k = (C * S * rho) / (2 * m) #коэффициент сопротивления
         alpha_rad = np.radians(angle) #перевод градусов в радианы
@@ -46,7 +46,7 @@ G = 9.81
 
 ### Симуляция полёта
  #моделируем до падения
-        while state[1] >= 0:
+            while state[1] >= 0:
             k1 = derivatives(state)
             k2 = derivatives(state + h / 2 * k1)
             k3 = derivatives(state + h / 2 * k2)
@@ -61,8 +61,8 @@ G = 9.81
             if state[1] > max_height:
                 max_height = state[1]
 
-        final_velocity = np.sqrt(state[2] ** 2 + state[3] ** 2)
-        return trajectory_x, trajectory_y, max_height, state[0], final_velocity
+            final_velocity = np.sqrt(state[2] ** 2 + state[3] ** 2)
+            return trajectory_x, trajectory_y, max_height, state[0], final_velocity
         
 
 ---
