@@ -45,7 +45,7 @@
         max_height = 0.0
 
 ### Симуляция полёта
- #моделируем до падения
+            #моделируем до падения
             while state[1] >= 0:
             k1 = derivatives(state)
             k2 = derivatives(state + h / 2 * k1)
